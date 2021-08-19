@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SonsuzBilgiV2.Data\SonsuzBilgiV2.Data.csproj" />
+    <ProjectReference Include="..\SonsuzBilgiV2.Entities\SonsuzBilgiV2.Entities.csproj" />
+    <ProjectReference Include="..\SonsuzbilgiV2.Shared\SonsuzbilgiV2.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

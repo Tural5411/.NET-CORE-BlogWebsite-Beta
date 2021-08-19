@@ -1,0 +1,43 @@
+﻿@model SonsuzBilgiV2.Mvc.Areas.Admin.Models.UserWithRolesViewModel  
+<div class="navbar-default sidebar">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" asp-area="Admin" asp-controller="Home" asp-action="Index">Sonsuz Bilgi</a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="sidebar-nav navbar-collapse">
+
+        <!-- user profile pic -->
+        <div class="userprofile text-center">
+            <div class="userpic"> <img src="~/img/defaultUser.png" alt="" class="userpicimg"> <a href="#" class="btn btn-primary settingbtn"><i class="fa fa-gear"></i></a> </div>
+            <h3 class="username">@User.Identity.Name</h3>
+            <p></p>
+        </div>
+        <div class="clearfix"></div>
+        <!-- user profile pic -->
+
+        <ul class="nav" id="side-menu">
+            <li> <a asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a> </li>
+            <li>
+                <a asp-area="Admin" asp-controller="Article" asp-action="Index" class="menudropdown"><i class="far fa-newspaper"></i> Articles <span class="badge">12</span><span class="fa arrow"></span></a>
+            </li>
+            <li>
+                <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="menudropdown"><i class="fas fa-th-list"></i> Categories<span class="badge red">6</span><span class="fa arrow"></span></a>
+                <!-- /.nav-second-level -->
+            </li>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a asp-area="Admin" asp-controller="User" asp-action="Index" class="menudropdown"><i class="fas fa-user-friends"></i> Users <span class="badge green">10</span><span class="fa arrow"></span></a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li> 
+                     <a asp-area="Admin" asp-controller="Role" asp-action="Index"><i class="fas fa-user-tag"></i> Roles</a> 
+                </li>
+            }
+            <li> <a asp-area="Admin" asp-controller="Comment" asp-action="Index"><i class="fas fa-comments"></i> Comments</a> </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
